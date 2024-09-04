@@ -1,0 +1,7 @@
+- 👋 Hi, I’m @cabra.lat
+- 👀 I’m interested in Physics and How Stuff Works.
+- 🌱 I’m always learning something.
+- 💞️ I’m looking to collaborate on things I find interesting.
+- 📫 How to reach me: don't (psts... currently active at [@cabra.lat](https://bsky.app/profile/cabra.lat))
+- 😄 Pronouns: none, really.
+- ⚡ Fun fact: I just made this account to share code without disclosing too much.
