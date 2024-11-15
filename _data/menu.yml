@@ -12,12 +12,19 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: posts by category
+  - title: posts in english
     post_list:
-      category: example2
+      category: en
       show_more: true
       show_more_text: See more posts...
-      show_more_url: example2-archive.html
+      show_more_url: en-archive.html
+  
+  - title: posts in non-verbal
+    post_list:
+      category: non-verbal
+      show_more: true
+      show_more_text: ...
+      show_more_url: non-verbal.html
 
   - title: rss
     url: feed.xml
