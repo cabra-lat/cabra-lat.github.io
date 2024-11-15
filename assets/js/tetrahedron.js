@@ -8,15 +8,13 @@
 
     // Initialize renderer before using in CameraControls
     const renderer = new THREE.WebGLRenderer();
-    container.appendChild(renderer.domElement);
 
     // Resize renderer to fit container
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0xffffff);
 
-
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, 1.0, 0.1, 1000);
     camera.position.set(1, 1, 1);
     camera.lookAt(scene.position);
 
@@ -143,7 +141,6 @@
 
     // GUI for switching datasets and controlling separation
     const gui = new datGui.GUI({ autoPlace: false });
-    container.appendChild(gui.domElement);
 
     const params = {
         dataset: 'legacy', // Default dataset
@@ -192,13 +189,11 @@
         });
     });
 
-
-
     window.addEventListener('resize', onWindowResize, false);
 
     function onWindowResize() {
         const container = document.querySelector('.w');
-        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.aspect = 1.0;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
     }
@@ -213,5 +208,8 @@
             renderer.render(scene, camera);
         }
     }
+
+    container.appendChild(gui.domElement);
+    container.appendChild(renderer.domElement);
     animate();
 })();
