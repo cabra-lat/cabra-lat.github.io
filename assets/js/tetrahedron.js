@@ -1,7 +1,7 @@
 (async () => {
     const url = (lib) => `https://cdn.jsdelivr.net/npm/${lib}/+esm`;
     const datGui = await import(url('dat.gui'));
-    const THREE  = await import(url('three'));
+    const THREE = await import(url('three'));
     const { default: CameraControls } = await import(url('camera-controls'));
 
     const container = document.querySelector('.w');
@@ -12,7 +12,7 @@
 
     // Resize renderer to fit container
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0xffffff); 
+    renderer.setClearColor(0xffffff);
 
 
     const scene = new THREE.Scene();
@@ -197,9 +197,10 @@
     window.addEventListener('resize', onWindowResize, false);
 
     function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        const container = document.querySelector('.w');
+        camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(container.clientWidth, container.clientHeight);
     }
 
     // Render function
