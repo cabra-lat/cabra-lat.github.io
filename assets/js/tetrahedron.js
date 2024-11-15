@@ -14,7 +14,7 @@
     camera.position.set(1, 1, 1);
     camera.lookAt(scene.position);
 
-    CameraControls.install({ THREE });
+    CameraControls.install( { THREE: THREE } );
     const cameraControls = new CameraControls(camera, renderer.domElement);
     
     const clock = new THREE.Clock(); // Declare clock instance for animate function
