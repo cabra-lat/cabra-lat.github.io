@@ -180,6 +180,14 @@ controls.maxDistance = 10; // Maximum zoom distance
 camera.position.set(1, 1, 1); // A better angle for 3D viewing
 camera.lookAt(scene.position);
 
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
+
 // Render function
 function animate() {
     requestAnimationFrame(animate);

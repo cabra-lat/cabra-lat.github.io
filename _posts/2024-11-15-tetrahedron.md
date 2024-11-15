@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 category: non-verbal
 custom_js: tetrahedron
 ---
