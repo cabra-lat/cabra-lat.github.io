@@ -1,7 +1,12 @@
-const importlib = (lib) => import(`https://cdn.jsdelivr.net/npm/${lib}/+esm`);
+/*
 import * as datGui from importlib('dat.gui');
 import * as THREE from importlib('three');
 import CameraControls from importlib('camera-controls');
+*/
+const url = (lib) => import(`https://cdn.jsdelivr.net/npm/${lib}/+esm`);
+const datGui = await import(url('dat.gui'));
+const THREE = await import(url('three'));
+const CameraControls = await import(url('camera-controls'));
 
 CameraControls.install( { THREE: THREE } );
 
