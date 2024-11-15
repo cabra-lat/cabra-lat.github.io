@@ -12,9 +12,11 @@
 
     // Resize renderer to fit container
     renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0xffffff); 
+
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.set(1, 1, 1);
     camera.lookAt(scene.position);
 
@@ -140,7 +142,9 @@
     }
 
     // GUI for switching datasets and controlling separation
-    const gui = new datGui.GUI();
+    const gui = new datGui.GUI({ autoPlace: false });
+    container.appendChild(gui.domElement);
+
     const params = {
         dataset: 'legacy', // Default dataset
         separation: -0.09,   // Default separation factor
