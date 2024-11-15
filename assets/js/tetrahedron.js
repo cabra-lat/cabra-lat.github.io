@@ -205,10 +205,7 @@
         const delta = clock.getDelta();
         const hasControlsUpdated = cameraControls.update(delta);
         requestAnimationFrame(animate);
-        // you can skip this condition to render though
-        if (hasControlsUpdated) {
-            renderer.render(scene, camera);
-        }
+        renderer.render(scene, camera);
     }
 
     container.appendChild(gui.domElement);
