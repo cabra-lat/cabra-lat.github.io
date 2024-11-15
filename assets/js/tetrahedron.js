@@ -1,6 +1,7 @@
-import * as datGui from 'https://www.jsdelivr.com/dat.gui';
-import * as THREE from 'https://www.jsdelivr.com/three';
-import CameraControls from 'https://www.jsdelivr.com/camera-controls';
+const importlib = (lib) => `https://cdn.jsdelivr.net/npm/{lib}/+esm`
+import * as datGui from importlib('dat.gui');
+import * as THREE from importlib('three');
+import CameraControls from importlib('camera-controls');
 
 CameraControls.install( { THREE: THREE } );
 
