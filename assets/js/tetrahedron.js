@@ -1,6 +1,6 @@
 import * as datGui from 'https://esm.run/dat.gui';
-import * as THREE from 'three';
-import CameraControls from 'camera-controls';
+import * as THREE from 'https://esm.run/three';
+import CameraControls from 'https://esm.run/ camera-controls';
 
 CameraControls.install( { THREE: THREE } );
 
