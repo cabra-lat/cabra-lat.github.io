@@ -1,8 +1,8 @@
 (async () => {
     const url = (lib) => `https://cdn.jsdelivr.net/npm/${lib}/+esm`;
-    const datGui = await import(url('dat.gui'));
-    const THREE = await import(url('three'));
-    const CameraControls = await import(url('camera-controls'));
+    const { default: datGui } = await import(url('dat.gui'));
+    const { default: THREE  } = await import(url('three'));
+    const { default: CameraControls } = await import(url('camera-controls'));
 
     // Initialize renderer before using in CameraControls
     const renderer = new THREE.WebGLRenderer();
