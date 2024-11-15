@@ -10,7 +10,7 @@
     const renderer = new THREE.WebGLRenderer();
 
     // Resize renderer to fit container
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setSize(container.clientWidth, container.clientWidth);
     renderer.setClearColor(0xffffff);
 
     const scene = new THREE.Scene();
@@ -195,7 +195,7 @@
         const container = document.querySelector('.w');
         camera.aspect = 1.0;
         camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setSize(container.clientWidth, container.clientWidth);
     }
 
     // Render function
