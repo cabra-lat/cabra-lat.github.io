@@ -4,12 +4,14 @@
     const THREE  = await import(url('three'));
     const { default: CameraControls } = await import(url('camera-controls'));
 
+    const container = document.querySelector('.w');
+
     // Initialize renderer before using in CameraControls
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    
-    const container = document.querySelector('.w');
     container.appendChild(renderer.domElement);
+
+    // Resize renderer to fit container
+    renderer.setSize(container.clientWidth, container.clientHeight);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
