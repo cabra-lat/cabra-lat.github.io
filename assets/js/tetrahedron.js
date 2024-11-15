@@ -1,9 +1,21 @@
+import * as datGui from 'https://esm.run/dat.gui';
+import * as THREE from 'three';
+import CameraControls from 'camera-controls';
+
+CameraControls.install( { THREE: THREE } );
+
 // Initialize Three.js scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(1, 1, 1); // A better angle for 3D viewing
+camera.lookAt(scene.position);
+
+const cameraControls = new CameraControls( camera, renderer.domElement );
 const renderer = new THREE.WebGLRenderer();
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
 
 // Define cube vertices
 const vertices = [
@@ -122,7 +134,7 @@ function clearTetrahedrons() {
 }
 
 // GUI for switching datasets and controlling separation
-const gui = new dat.GUI();
+const gui = new datGui.GUI();
 const params = {
     dataset: 'legacy', // Default dataset
     separation: -0.09,   // Default separation factor
@@ -170,15 +182,7 @@ gui.add(params, 'solid').onChange(value => {
     });
 });
 
-// Initialize controls
-const controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true; // Smooth movement
-controls.dampingFactor = 0.05;
-controls.screenSpacePanning = false; // Lock vertical panning (optional)
-controls.minDistance = 1; // Minimum zoom distance
-controls.maxDistance = 10; // Maximum zoom distance
-camera.position.set(1, 1, 1); // A better angle for 3D viewing
-camera.lookAt(scene.position);
+
 
 window.addEventListener( 'resize', onWindowResize, false );
 
@@ -190,8 +194,12 @@ function onWindowResize(){
 
 // Render function
 function animate() {
+    const delta = clock.getDelta();
+    const hasControlsUpdated = cameraControls.update( delta );
     requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
+    // you can skip this condition to render though
+	if ( hasControlsUpdated ) {
+		renderer.render( scene, camera );
+	}
 }
 animate();
