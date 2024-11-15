@@ -1,23 +1,24 @@
 (async () => {
-const url = (lib) => `https://cdn.jsdelivr.net/npm/${lib}/+esm`;
-const datGui = await import(url('dat.gui'));
-const THREE = await import(url('three'));
-const CameraControls = await import(url('camera-controls'));
+    const url = (lib) => `https://cdn.jsdelivr.net/npm/${lib}/+esm`;
+    const datGui = await import(url('dat.gui'));
+    const THREE = await import(url('three'));
+    const CameraControls = await import(url('camera-controls'));
 
+    // Initialize renderer before using in CameraControls
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-CameraControls.install( { THREE: THREE } );
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(1, 1, 1);
+    camera.lookAt(scene.position);
 
-// Initialize Three.js scene
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(1, 1, 1); // A better angle for 3D viewing
-camera.lookAt(scene.position);
-
-const cameraControls = new CameraControls( camera, renderer.domElement );
-const renderer = new THREE.WebGLRenderer();
-
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+    CameraControls.install({ THREE });
+    const cameraControls = new CameraControls(camera, renderer.domElement);
+    
+    const clock = new THREE.Clock(); // Declare clock instance for animate function
+    
 
 
 // Define cube vertices
