@@ -7,7 +7,9 @@
     // Initialize renderer before using in CameraControls
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    
+    const container = document.querySelector('.w');
+    container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -18,8 +20,6 @@
     const cameraControls = new CameraControls(camera, renderer.domElement);
 
     const clock = new THREE.Clock(); // Declare clock instance for animate function
-
-
 
     // Define cube vertices
     const vertices = [
