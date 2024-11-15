@@ -9,8 +9,11 @@
     // Initialize renderer before using in CameraControls
     const renderer = new THREE.WebGLRenderer();
 
+    const clientWidth = 640;
+    const clientHeight = 640;
+
     // Resize renderer to fit container
-    renderer.setSize(container.clientWidth, container.clientWidth);
+    renderer.setSize(clientWidth, clientHeight);
     renderer.setClearColor(0xffffff);
 
     const scene = new THREE.Scene();
@@ -192,10 +195,9 @@
     window.addEventListener('resize', onWindowResize, false);
 
     function onWindowResize() {
-        const container = document.querySelector('.w');
         camera.aspect = 1.0;
         camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientWidth);
+        renderer.setSize(clientWidth, clientHeight);
     }
 
     // Render function
