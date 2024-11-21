@@ -17,7 +17,7 @@
     renderer.setClearColor(0xffffff);
 
     const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera( -1.0, 1.0, 1.0, -1.0, 1, 1000 )
+    const camera = new THREE.OrthographicCamera( -2.0, 2.0, 2.0, -2.0, 1, 1000 )
     camera.position.set(1, 1, 1);
     camera.lookAt(scene.position);
 
