@@ -22,10 +22,6 @@ theme_config:
 sass:
   style: :compressed
 
-markdown: kramdown
-highlighter: rouge
-    input: GFM
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
