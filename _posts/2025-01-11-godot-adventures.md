@@ -3,28 +3,27 @@ layout: post
 category: coding 
 ---
 
-I've been working with Godot since last year (2024). I've used in the past and I find it really nice, with awesome documentation and lot's of resources. The latest major version, Godot 4.X, received a lot of new features and before it came out I was particularly interested in the State Machine improvements.
+I've been working with Godot since last year (2024). I had used it in the past and found it really enjoyable, with excellent documentation and plenty of resources. The latest major version, Godot 4.X, introduced many new features. Before its release, I was particularly excited about the improvements to the State Machine.
 
-So far I acomplished setting up some retro psx visuals, physics-based interactions with objects and some basic text descriptions. Very simple stuff but I'm happy with the results.
+So far, I've managed to set up retro PSX-style visuals, physics-based interactions with objects, and some basic text descriptions. It's pretty simple stuff, but I'm happy with the results.
 
 ![godot-adventures][godot-adventures]
 
-I was developing a system that plays a sound based on a material metadata for each object [`CollisionShape3D`][docs-collider-shape-3d]. This way I could play different sounds for each material collision and even have the same object emit different sounds depending on which part of the object was hit.
+Recently, I was developing a system to play sounds based on the material metadata of each object’s [`CollisionShape3D`][docs-collider-shape-3d]. This allows me to assign different collision sounds for each material—and even let the same object emit different sounds depending on which part of it is hit.
 
-I was using a [`Dictionary`][docs-dictionary] to map the material to a [`Array`][docs-array] of sounds and then play it. It was working but it was a bit hard to maintain and to add new sounds. Then, I've started using a [`Resource`][docs-resource] which basically wraps the [`Dictionary`][docs-dictionary] and allow me to create and edit in the editor. But it's far from ideal. As you have to scroll through a crazy amount of resources to find the one you want to add:
+Initially, I used a [`Dictionary`][docs-dictionary] to map materials to an [`Array`][docs-array] of sounds and then played the appropriate sound. While it worked, the system was difficult to maintain and adding new sounds was cumbersome. To address this, I switched to using a [`Resource`][docs-resource], which essentially wraps the [`Dictionary`][docs-dictionary] and allows for easier editing within the Godot editor. However, this approach introduced its own challenge: scrolling through an overwhelming number of resources to find the one I wanted to add.
 
 ![crazy-amount-of-resources][crazy-amount-of-resources]
 
-Dictionary is a great data structure but resources are much more powerful because they are referenced by unique ids and can be edited in the editor. So I was thinking about how to make it easier to add and edit sounds for each material.
+While dictionaries are a great data structure, resources are much more powerful because they can be referenced by unique IDs and edited directly in the editor. Still, I wanted to find a way to make adding and editing sounds for each material more streamlined.
 
-So it came to me I could use a interface just like [`SpriteFrames`][docs-sprite-frames] panel that appear when you use the [`AnimatedSprites2D`][docs-animated-sprites-2d] node.
-You can add animation names and some frames to each animation and then play it as simple as `animation.play("name-of-the-animation")`.
+That’s when I thought about creating an interface similar to the [`SpriteFrames`][docs-sprite-frames] panel, which appears when you use the [`AnimatedSprite2D`][docs-animated-sprites-2d] node. With SpriteFrames, you can add animation names and frames for each animation and then play them with a simple call like `animation.play("animation-name")`.
 
-I needed that but for sounds so I coded several hours straight, digging the original code of godot (Thankfully it's Open Source!), using AI Chat to finally reach the perfect plugin for my case:
+I needed something similar but designed for sounds. After coding for several hours, digging into Godot's open-source code, and leveraging AI chat tools, I finally created the perfect plugin for my needs:
 
 ![the-perfect-plugin][the-perfect-plugin]
 
-Still not perfect, as you may see there are a few strange buttons that need to be tweaked and a few bugs here and there, but the sound is working and I can easily manage a collection of sounds for each material now.
+While it’s not entirely perfect yet—you might notice a few odd buttons and minor bugs—the sound system works, and I can now easily manage collections of sounds for each material.
 
 [godot-adventures]: {{ page.assets }}/imgs/godot-adventures.png
 [crazy-amount-of-resources]: {{ page.assets }}/imgs/crazy-amount-of-resources.png

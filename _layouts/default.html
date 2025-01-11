@@ -1,13 +1,20 @@
-{% assign image = page.featured_image | default: page.assets %}
-{% assign page_image = image | append: '/banner.png' | absolute_url %}
+{% assign image = page.featured_image | default: page.slug %}
+{% assign page_image = "previews/" | append: image | append: '.png' | absolute_url %}
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
   {%- include head.html -%}
-  <meta property="og:type"        content="article">
-  <meta property="og:title"       content="{{ page.title }}">
-  <meta property="og:description" content="{{ page.excerpt | default: page.content | strip_html | truncatewords: 50 }}">
-  <meta property="og:url"         content="{{ page.url | absolute_url }}">
-  <meta property="og:image"       content="{{ page_image }}"> 
+  <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="cabra.lat" />
+  <link rel="manifest" href="/favicons/site.webmanifest" />
+  <meta                    property="og:type"        content="article">
+  <meta name="title"       property="og:title"       content="{{ page.title }}">
+  <meta name="description" property="og:description" content="{{ page.excerpt | default: page.content | strip_html | truncatewords: 50 }}">
+  <meta                    property="og:url"         content="{{ page.url | absolute_url }}">
+  <meta name="image"       property="og:image"       content="{{ page_image }}"> 
+  <meta name="author"      content="{{ page.author }}">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="{{ page.title }}">

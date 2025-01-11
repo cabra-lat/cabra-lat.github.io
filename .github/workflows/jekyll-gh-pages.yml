@@ -1,4 +1,4 @@
-name: Deploy Jekyll with Custom Plugins
+name: Deploy Jekyll with Custom Plugins and Previews
 
 on:
   push:
@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +24,7 @@ jobs:
       - name: Set Up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1 # Use the Ruby version required for your Jekyll setup
+          ruby-version: 3.1
           bundler-cache: true
 
       - name: Install Dependencies
@@ -36,10 +35,16 @@ jobs:
         run: |
           bundle exec jekyll build --destination ./_site
 
+      - name: Install wkhtmltopdf and Generate Previews
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf
+          chmod +x .github/workflows/generate_previews.sh
+          ./.github/workflows/generate_previews.sh || exit 1
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
 
-  # Deploy job
   deploy:
     environment:
       name: github-pages
