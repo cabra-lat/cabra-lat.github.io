@@ -22,6 +22,7 @@ for file in _site/*.html; do
       --window-status say_cheese \
       --width 1200 --height 630 \
       --enable-local-file-access \
+      --zoom 2.0 \
       "http://localhost:8080/${slug}.html" "$output"
     echo "Generated preview for $slug at $output"
 done
