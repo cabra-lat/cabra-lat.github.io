@@ -15,7 +15,7 @@ mkdir -p _site/previews
 
 # Generate previews
 echo "Generating previews..."
-for file in _site/*.html; do
+for file in og-images/*.html; do
     slug=$(basename "${file%.html}")
     output="_site/previews/${slug}.png"
     wkhtmltoimage \
