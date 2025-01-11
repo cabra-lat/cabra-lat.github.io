@@ -35,12 +35,16 @@ jobs:
         run: |
           bundle exec jekyll build --destination ./_site
 
-      - name: Install wkhtmltopdf and Generate Previews
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wkhtmltopdf
-          chmod +x .github/workflows/generate_previews.sh
-          ./.github/workflows/generate_previews.sh || exit 1
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate OG Image Screenshots
+        run: node .github/workflows/generate_previews.js
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

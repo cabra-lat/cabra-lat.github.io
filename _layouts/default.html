@@ -49,8 +49,6 @@
       {% for js_file in page.custom_js %}
       <script type="module" src="{{ site.baseurl }}/{{ page.assets }}/js/{{ js_file }}.js"></script>
       {% endfor %}
-    {% else %}
-      <script> onready = () => { window.status = 'say_cheese' }; </script>
     {% endif %}
   </body>
 </html>

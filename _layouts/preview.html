@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+
+<head>
+  {%- include head.html -%}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #1e1e2f;
+      color: #fff;
+    }
+
+    .first-image {
+      width: 100%;
+      max-height: 50%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+      z-index: 0;
+    }
+
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+  display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+      z-index: 0;
+    }
+
+    .title {
+      font-size: 4em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 1.0;
+    }
+
+    .excerpt{
+      text-align: left;
+      font-size: 2em;
+      margin: 0.5em;
+      opacity: 0.8;
+      z-index: 1.0;
+    }
+
+    .date {
+      font-size: 1.25em;
+      margin: 0.5em;
+      opacity: 0.8;
+      z-index: 1.0;
+    }
+
+    .author {
+      font-size: 1.25em;
+      font-style: italic;
+      opacity: 1.0;
+      z-index: 1;
+    }
+
+    .hidden-content {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- should cover full width -->
+  {% assign first_image = page.content | extract_first_image %}
+  {% if first_image %}
+    <img class="first-image" src="{{ first_image | relative_url }}" alt="Preview Image">
+  {% endif %}
+  <div class="overlay"></div>
+
+  <!-- should cover the image with a small gradient shadow -->
+  <main class="container">
+    <div class="title">{{ page.title | escape }}</div>
+    <p   class="excerpt">{{ page.description | default: page.excerpt | strip_html | truncatewords: 40 }}</p>
+    <div class="date">{{ page.date | date: "%B %d, %Y" }}</div>
+    <div class="author">By {{ page.author | default: site.author }}.</div>
+  </main>
+
+  <div class="hidden-content">
+    {{ content }}
+  </div>
+</body>
+
+</html>

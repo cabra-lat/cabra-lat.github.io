@@ -23,3 +23,8 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-remote-theme
+
+collections:
+  previews:
+    output: true
+    permalink: /:slug.png.html
