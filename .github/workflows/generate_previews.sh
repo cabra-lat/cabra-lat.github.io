@@ -18,7 +18,9 @@ echo "Generating previews..."
 for file in _site/*.html; do
     slug=$(basename "${file%.html}")
     output="_site/previews/${slug}.png"
-    wkhtmltoimage --width 1200 --height 630 \
+    wkhtmltoimage \
+      --window-status say_cheese \
+      --width 1200 --height 630 \
       --enable-local-file-access \
       "http://localhost:8080/${slug}.html" "$output"
     echo "Generated preview for $slug at $output"

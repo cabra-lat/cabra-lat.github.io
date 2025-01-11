@@ -206,6 +206,7 @@
         const hasControlsUpdated = cameraControls.update(delta);
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
+        window.status = 'say_cheese'
     }
 
     container.appendChild(gui.domElement);

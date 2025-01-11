@@ -47,8 +47,6 @@ deck.render();
 
 deck.shuffle()
 
-await deck.deal(5, [yours, theirs])
-
 let pile = cards.Deck({
   label: 'discard',
   sticky: 'top',
@@ -103,3 +101,7 @@ pile.click( _ => {
     .then(_ => pile.deal(-1, [ deck ]) )
     .then(_ => deck.x += 50 )
 })
+
+await deck.deal(5, [yours, theirs])
+
+window.status = 'say_cheese'
