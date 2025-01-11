@@ -1,6 +1,6 @@
 ---
 layout: post
-category: en
+category: coding 
 ---
 
 I've been working with Godot since last year (2024). I've used in the past and I find it really nice, with awesome documentation and lot's of resources. The latest major version, Godot 4.X, received a lot of new features and before it came out I was particularly interested in the State Machine improvements.

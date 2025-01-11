@@ -1,6 +1,6 @@
 ---
 layout: post
-category: en
+category: coding 
 custom_js: mouse_coords
 ---
 

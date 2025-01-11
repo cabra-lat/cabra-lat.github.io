@@ -1,5 +1,5 @@
 ---
 layout: post
-category: non-verbal
+category: coding 
 custom_js: tetrahedron
 ---
