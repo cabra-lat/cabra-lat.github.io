@@ -10,7 +10,11 @@ fs.mkdirSync(outputDir, { recursive: true });
     const browser = await puppeteer.launch({
         args: ['--no-sandbox', '--disable-setuid-sandbox'], // Add this line
     });
-    const page = await browser.newPage();
+
+    await page.setViewport({
+        width: 1200,
+        height: 630,
+    }); 
 
     const files = fs.readdirSync(previewsDir).filter(file => file.endsWith('.png.html'));
 
