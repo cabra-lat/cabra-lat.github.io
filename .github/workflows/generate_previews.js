@@ -7,7 +7,9 @@ const outputDir = '_site/previews/';
 fs.mkdirSync(outputDir, { recursive: true });
 
 (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: ['--no-sandbox', '--disable-setuid-sandbox'], // Add this line
+    });
     const page = await browser.newPage();
 
     const files = fs.readdirSync(previewsDir).filter(file => file.endsWith('.png.html'));
