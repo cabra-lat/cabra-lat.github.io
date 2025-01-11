@@ -26,9 +26,9 @@ I needed that but for sounds so I coded several hours straight, digging the orig
 
 Still not perfect, as you may see there are a few strange buttons that need to be tweaked and a few bugs here and there, but the sound is working and I can easily manage a collection of sounds for each material now.
 
-[godot-adventures]: assets/2025-01-11/godot-adventures.png
-[crazy-amount-of-resources]: assets/2025-01-11/crazy-amount-of-resources.png
-[the-perfect-plugin]: assets/2025-01-11/the-perfect-plugin.png
+[godot-adventures]: {{ page.assets }}/imgs/godot-adventures.png
+[crazy-amount-of-resources]: {{ page.assets }}/imgs/crazy-amount-of-resources.png
+[the-perfect-plugin]: {{ page.assets }}/imgs/the-perfect-plugin.png
 [docs-resource]: https://docs.godotengine.org/en/stable/classes/class_resource.html
 [docs-collider-shape-3d]: https://docs.godotengine.org/en/stable/classes/class_collisionshape3d.html
 [docs-sprite-frames]: https://docs.godotengine.org/en/stable/classes/class_spriteframes.html

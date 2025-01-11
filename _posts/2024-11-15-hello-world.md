@@ -1,7 +1,7 @@
 ---
 layout: post
 category: coding 
-custom_js: mouse_coords
+custom_js: hello-world
 ---
 
 Hello World!

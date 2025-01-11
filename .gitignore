@@ -1,0 +1,34 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Logs and debugging files
+*.log
+*.lock
+*.pid
+*.gem
+*.swp
+*.tmp
+*.bak
+*.old
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE or editor-specific files
+.idea/
+.vscode/
+*.iml
+
+# Dependency directories
+node_modules/
+vendor/bundle/
+.bundle/
+
+# Environment files
+.env
+.e

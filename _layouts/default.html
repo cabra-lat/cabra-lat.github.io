@@ -1,10 +1,36 @@
+{% assign image = page.featured_image | default: page.assets %}
+{% assign page_image = image | append: '/banner.png' | absolute_url %}
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
   {%- include head.html -%}
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.excerpt | default: page.content | strip_html | truncatewords: 50 }}">
+  <meta property="og:url"         content="{{ page.url | absolute_url }}">
+  <meta property="og:image"       content="{{ page_image }}"> 
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.excerpt | default: page.content | strip_html | truncatewords: 50 }}">
+  <meta name="twitter:image"       content="{{ page_image }}">
+
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="page-content" aria-label="Content">
       <div class="w">
         {{ content }}
+        <p>
+          {% if page.custom_js %}
+            Javascript files in use:
+            <ul>
+            {% for js_file in page.custom_js %}
+              <li>
+                <a href="{{ site.baseurl }}/{{ page.assets }}/js/{{ js_file }}.js" target="_blank">{{ js_file }}.js</a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </center>
+        </p>
       </div>
     </main>
 
@@ -14,7 +40,7 @@
 
     {% if page.custom_js %}
       {% for js_file in page.custom_js %}
-        <script type="module" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+      <script type="module" src="{{ site.baseurl }}/{{ page.assets }}/js/{{ js_file }}.js"></script>
       {% endfor %}
     {% endif %}
   </body>

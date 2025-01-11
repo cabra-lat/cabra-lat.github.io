@@ -7,9 +7,11 @@ entries:
 
   - title: Links
     entries:
-      - title: "@cabra.lat"
+      - title: "bluesky"
         url: https://bsky.app/profile/cabra.lat
-      - title: rss
+      - title: "github"
+        url: https://github.com/cabra-lat
+      - title: "this blog's rss"
         url: feed.xml
 
   - title: posts
