@@ -11,6 +11,9 @@ fs.mkdirSync(outputDir, { recursive: true });
         args: ['--no-sandbox', '--disable-setuid-sandbox'], // Add this line
     });
 
+    const page = await browser.newPage();
+  
+    // Set the viewport size to 1200x630
     await page.setViewport({
         width: 1200,
         height: 630,
