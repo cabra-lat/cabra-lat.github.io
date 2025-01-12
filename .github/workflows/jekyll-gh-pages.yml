@@ -44,7 +44,9 @@ jobs:
         run: npm install puppeteer
 
       - name: Generate OG Image Screenshots
-        run: node .github/workflows/generate_previews.js
+        run: mkdir -p previews &&
+             node .github/workflows/generate_previews.js &&
+             rsync -a previews/* ./_site/previews || exit 1
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
