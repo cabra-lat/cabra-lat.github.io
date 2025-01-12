@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const previewsDir = '_site/previews/';
-const outputDir = '_site/previews/';
+const outputDir = 'previews/';
 fs.mkdirSync(outputDir, { recursive: true });
 
 (async () => {
