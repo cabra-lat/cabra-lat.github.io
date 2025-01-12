@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const previewsDir = '_site/';
+const previewsDir = '_site/previews/';
 const outputDir = '_site/previews/';
 fs.mkdirSync(outputDir, { recursive: true });
 
@@ -19,11 +19,11 @@ fs.mkdirSync(outputDir, { recursive: true });
         height: 630,
     }); 
 
-    const files = fs.readdirSync(previewsDir).filter(file => file.endsWith('.png.html'));
+    const files = fs.readdirSync(previewsDir).filter(file => file.endsWith('.html'));
 
     for (const file of files) {
         const filePath = `file://${path.resolve(previewsDir, file)}`;
-        const outputFilePath = path.resolve(outputDir, `${path.basename(file, '.png.html')}.png`);
+        const outputFilePath = path.resolve(outputDir, `${path.basename(file, '.html')}.png`);
 
         console.log(`Rendering ${filePath} to ${outputFilePath}`);
 

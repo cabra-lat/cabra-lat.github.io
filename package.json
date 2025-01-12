@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "generate-previews": "node .github/workflows/generate_previews.js"
+  },
   "dependencies": {
     "puppeteer": "^24.0.0"
   }

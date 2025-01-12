@@ -27,4 +27,4 @@ plugins:
 collections:
   previews:
     output: true
-    permalink: /:slug.png.html
+    permalink: /previews/:slug.html
