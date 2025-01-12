@@ -1,4 +1,4 @@
-{% assign image = page.featured_image | default: page.slug %}
+{% assign image = page.featured_image | default: page.basename_without_ext %}
 {% assign page_image = "previews/" | append: image | append: '.png' | absolute_url %}
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">

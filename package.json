@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "generate-previews": "node .github/workflows/generate_previews.js"
+    "start": "npm run bundle-install && npm run generate-previews && npm run bundle-exec",
+    "generate-previews": "node .github/workflows/generate_previews.js",
+    "bundle-install": "bundle install --local",
+    "bundle-exec": "bundle exec jekyll serve --verbose"
   },
   "dependencies": {
     "puppeteer": "^24.0.0"
