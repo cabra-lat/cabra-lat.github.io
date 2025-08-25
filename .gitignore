@@ -6,7 +6,6 @@ _site/
 
 # Logs and debugging files
 *.log
-*.lock
 *.pid
 *.gem
 *.swp

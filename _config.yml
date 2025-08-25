@@ -23,6 +23,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-remote-theme
+  - jektex
 
 collections:
   previews:

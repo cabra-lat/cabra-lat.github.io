@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "896c5baa33665629",
+    "type": "split",
+    "children": [
+      {
+        "id": "325fa61407e76c83",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "22a31ca06217e3ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2025-08-24-sera-que-é-burrice-mesmo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-08-24-sera-que-é-burrice-mesmo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "950af0971d6c1281",
+    "type": "split",
+    "children": [
+      {
+        "id": "6d259f8b58d1aa0e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "520febc72f726d2c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "084f5ddc78ca726d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "275958a783514576",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "51bcbf81c4605b75",
+    "type": "split",
+    "children": [
+      {
+        "id": "201af6fe8b6d140e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2626638cfea92f20",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2025-08-24-sera-que-é-burrice-mesmo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2025-08-24-sera-que-é-burrice-mesmo"
+            }
+          },
+          {
+            "id": "30d0f885dab0a1fc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2025-08-24-sera-que-é-burrice-mesmo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2025-08-24-sera-que-é-burrice-mesmo"
+            }
+          },
+          {
+            "id": "44935d66a87edb18",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d0afbcb23c24a93e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2025-08-24-sera-que-é-burrice-mesmo.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-08-24-sera-que-é-burrice-mesmo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "22a31ca06217e3ac",
+  "lastOpenFiles": [
+    "_posts/2025-01-11-godot-adventures.md",
+    "_posts/2025-01-01-cards.js.md",
+    "_posts/2024-11-27-paranoia.md",
+    "_posts/2024-11-15-tetrahedron.md",
+    "previews/cards-js.png",
+    "previews/godot-adventures.png",
+    "previews/hello-world.png",
+    "previews/paranoia.png",
+    "previews/tetrahedron.png",
+    "_posts/2025-08-24-sera-que-é-burrice-mesmo.md"
+  ]
+}
