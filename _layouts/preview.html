@@ -97,6 +97,14 @@
       z-index: 0;
       opacity: 0.1;
     }
+
+    .reading-time-indicator {
+      display: inline-block;
+    padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    margin: 5px 0 15px;
+    }
   </style>
 </head>
 
@@ -115,6 +123,7 @@
     <p   class="excerpt">{{ page.description | default: page.excerpt | strip_html | truncatewords: 40 }}</p>
     <div class="date">{{ page.date | date: "%B %d, %Y" }}</div>
     <div class="author">By {{ page.author | default: site.author }}.</div>
+    {% include reading-time.html %}
   </main>
 
   <div class="hidden-content">

@@ -1,0 +1,12 @@
+{% if page.content %}
+  {% assign words = page.content | number_of_words %}
+  {% assign read_time = words | divided_by: 250 %}
+  
+  <div class="reading-time-indicator">
+    <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; margin-right: 4px;">
+      <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+      <path fill="currentColor" d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+    </svg>
+    Tempo de leitura: {{ read_time }} min
+  </div>
+{% endif %}

@@ -166,8 +166,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "46eaa476f18748fd",
+  "active": "520febc72f726d2c",
   "lastOpenFiles": [
+    "_layouts/post.html",
+    "_includes/reading-time.html~",
+    "_includes/reading-time.html",
+    "_layouts/reading-time.html",
     "_posts/2025-08-24-sera-que-é-só-burrice-mesmo-?.md~",
     "_posts/2025-08-24-sera-que-é-só-burrice-mesmo-?.md",
     "previews/tetrahedron.png",
@@ -188,9 +192,6 @@
     "_site/assets/2025/08",
     "_posts/2025-01-11-godot-adventures.md",
     "assets/2025/08/Untitled.md",
-    "assets/2025/08/24/imgs",
-    "assets/2025/08/24",
-    "assets/2025/08",
     "_posts/2025-01-01-cards.js.md",
     "_posts/2024-11-27-paranoia.md",
     "_posts/2024-11-15-tetrahedron.md",

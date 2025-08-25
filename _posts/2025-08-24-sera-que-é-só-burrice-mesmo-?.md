@@ -4,7 +4,6 @@ category: politica
 lang: pt-br
 description: Como a esquerda está repetindo o erro que ajudou Hitler chegar ao poder e como Olavo explorou essa fraqueza estratégica para eleger Bolsonaro.
 ---
-
 Não deve ser nenhuma novidade para vocês que me acompanham nas redes que nutro um recente interesse por política em geral. Eu nunca considerei que entendia muito bem sobre o assunto, mas sempre me considerei uma espécie de centrista à esquerda, justamente por reconhecer as contribuições dos governos petistas na minha formação, sem as quais eu provavelmente nunca teria me formado na USP (literalmente, minha família jamais teria tido condições financeiras para tal). 
 
 Sempre tentei entender a política através de uma análise de certa forma racional, herança da formação acadêmica em áreas exatas, e sempre tentei evitar defender com unhas e dentes o que eu considero não **entender** direito, justamente por princípio de *parcimônia*. No entanto, sempre entendi que era importante entender em algum momento da minha vida (uma vez que ela estivesse melhor resolvida).
