@@ -27,7 +27,7 @@ fs.mkdirSync(outputDir, { recursive: true });
 
         console.log(`Rendering ${filePath} to ${outputFilePath}`);
 
-        await page.goto(filePath, { waitUntil: 'networkidle0' });
+        await page.goto(filePath, { waitUntil: 'load' });
         await page.screenshot({ path: outputFilePath, fullPage: true });
     }
 

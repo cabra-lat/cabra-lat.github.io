@@ -105,7 +105,7 @@
   <!-- should cover full width -->
   {% assign first_image = page.content | extract_first_image %}
   {% if first_image %}
-    <img class="first-image" src="{{ first_image | relative_url }}" alt="Preview Image">
+    <img class="first-image" src="{{ first_image | absolute_url }}" alt="Preview Image">
   {% endif %}
   <div class="overlay"></div>
 
