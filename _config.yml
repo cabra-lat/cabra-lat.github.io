@@ -29,3 +29,9 @@ collections:
   previews:
     output: true
     permalink: /previews/:slug.html
+
+feed:
+  path: /feed.xml
+  include_images: true
+  icon: /previews/:slug.png
+  logo: /favicons/favicon-96x96.png
