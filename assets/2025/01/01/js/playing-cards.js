@@ -1,6 +1,7 @@
 const { CardsJS } = await import('https://cdn.jsdelivr.net/gh/cabra-lat/cards.js@0.3.0/src/cards.min.js')
 
-let cards = new CardsJS({ cardsUrl: 'https://blog.cabra.lat/cards.js/img/cards.png' });
+let cards = new CardsJS({ cardsUrl: 'https://blog.cabra.su/cards.js/img/cards.png' });
+
 let deck = cards.Deck();
 deck.addCards(cards.all);
 

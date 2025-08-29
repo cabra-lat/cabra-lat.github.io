@@ -8,7 +8,8 @@ entries:
   - title: Links
     entries:
       - title: "bluesky"
-        url: https://bsky.app/profile/cabra.lat
+        url: https://bsky.app/profile/did:plc:ogyu3soahewfinml6hkziara
+
       - title: "github"
         url: https://github.com/cabra-lat
       - title: "this blog's rss"

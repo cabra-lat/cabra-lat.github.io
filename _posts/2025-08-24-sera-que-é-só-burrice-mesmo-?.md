@@ -80,7 +80,7 @@ Começo a me preparar psicologicamente para os piores cenários, e tenho ficado 
 
 ### A ilíada do judiciário
 
-Sempre usei o YouTube com o histórico desligado, depois do bloqueio do X acabei criando uma persona nova na internet nas redes (inclusive, no [bsky](https://bsky.app/profile/cabra.lat)) e comecei assistindo alguns vídeos recomendados sobre matemática, física, música e *línguas*.
+Sempre usei o YouTube com o histórico desligado, depois do bloqueio do X acabei criando uma persona nova na internet nas redes (inclusive, no [bsky](https://bsky.app/profile/did:plc:ogyu3soahewfinml6hkziara)) e comecei assistindo alguns vídeos recomendados sobre matemática, física, música e *línguas*.
 
 Por um acaso do algoritmo, encontrei o [Felipe Durante](https://www.youtube.com/@FelipeDurante), que é um engenheiro de produção que mora na China há bastante tempo e tem vídeos legais sobre a cultura e história da China, além de vídeos sobre política em geral. Eu que tinha uma visão bem ignorante e senso comum da China, passei a vê-la com outros olhos, inclusive percebendo a mudança que vem acontecendo na economia global.
 

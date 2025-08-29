@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c8061b7d9224a17a",
+        "id": "56042bfa640381b0",
         "type": "tabs",
         "children": [
           {
-            "id": "4a068b2a1609313d",
+            "id": "493806eeacc0dc74",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "support.md",
+                "file": "_posts/2025-08-28-materialismo-estoico-deletério.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "support"
+              "title": "2025-08-28-materialismo-estoico-deletério"
             }
           }
         ]
@@ -166,11 +166,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4a068b2a1609313d",
+  "active": "493806eeacc0dc74",
   "lastOpenFiles": [
+    "vendor/bundle/ruby/3.4.0/bundler.lock",
+    "favicons/site.webmanifest~",
+    "assets/2025/01/01/js/playing-cards.js~",
+    "support.md",
     "support.md~",
     "_layouts/support.html",
-    "vendor/bundle/ruby/3.4.0/bundler.lock",
     "_posts/2025-08-29-.md",
     "_site/assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",
     "_site/assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
@@ -178,7 +181,6 @@
     "assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
     "4913",
     "_site/support.html",
-    "support.md",
     "_site/yarn.lock",
     "_includes/banner.html",
     "Untitled.base",
@@ -195,7 +197,6 @@
     "previews/tetrahedron.png",
     "previews/acelera-celera-jesus.png",
     "assets/2025/08/29/imgs",
-    "assets/2025/08/29",
     "_posts/2025-08-28-materialismo-estoico-deletério.md",
     "_posts/2025-08-26-acelera-celera-jesus.md",
     "_posts/2025-08-24-sera-que-é-só-burrice-mesmo-?.md",
@@ -203,7 +204,6 @@
     "_posts/2024-11-27-paranoia.md",
     "_posts/2024-11-15-tetrahedron.md",
     "_posts/2024-11-15-hello-world.md",
-    "node_modules/dotenv/lib/main.js",
     "node_modules/dotenv/SECURITY.md",
     "node_modules/dotenv/README.md",
     "node_modules/dotenv/README-es.md",
