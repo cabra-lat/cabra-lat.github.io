@@ -168,9 +168,10 @@
   },
   "active": "4a068b2a1609313d",
   "lastOpenFiles": [
-    "_posts/2025-08-29-.md",
-    "vendor/bundle/ruby/3.4.0/bundler.lock",
     "support.md~",
+    "_layouts/support.html",
+    "vendor/bundle/ruby/3.4.0/bundler.lock",
+    "_posts/2025-08-29-.md",
     "_site/assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",
     "_site/assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
     "assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",

@@ -1,12 +1,7 @@
 ---
-layout: archive 
+layout: support 
 title: Ajude o blog a se manter no ar
 ---
-
-{%-include back_link.html-%}
-
-
-<h1> Formas de ajudar </h1>
 
 <a href="https://regery.com/en/domains/zone/su?pr=kfazqql">
     Registre um domínio da União Soviética (.SU) no Regery.
