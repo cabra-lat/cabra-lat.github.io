@@ -7,7 +7,9 @@ description: Rápido ou devagar, precisamos construir alternativas.
 
 ![trolley-fast-slow]({{ page.assets }}/imgs/fast-or-slow.png) <small> "Desejam uma morte lenta e dolorosa, ou uma morte rápida?" - Que tal se organizar para que a morte não seja uma opção? </small>
 
-Ultimamente tenho lido o livro [*Dialectical and Historical Materialism*](https://www.marxists.org/portugues/stalin/1938/09/mat-dia-hist.htm), de J. V. `Stalin`, sim aquele mesmo: patente alta, dá aula, bigode **grosso**. No livro publicado em 1938 e atribuído ao camarada `Stalin`, se discorre brevemente sobre os pressupostos básicos do método desenvolvido por `Marx`, no auge do agravamento das tensões que culminariam na **Grande Guerra Patriótica**.
+Ultimamente tenho lido o livro [*Dialectical and Historical Materialism*](https://www.marxists.org/portugues/stalin/1938/09/mat-dia-hist.htm), de J. V. `Stalin`, sim aquele mesmo: patente alta, dá aula, bigode **grosso**. 
+
+No livro publicado em 1938 e atribuído ao camarada `Stalin`, se discorre brevemente sobre os pressupostos básicos do método desenvolvido por `Marx`, no auge do agravamento das tensões que culminariam na **Grande Guerra Patriótica**.
 
 São três capítulos curtos e didáticos, com as citações originais dos textos e algumas ponderações do autor.
 

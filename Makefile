@@ -14,4 +14,7 @@ gen-previews:
 serve:
 	bundle exec jekyll serve --verbose
 
+post:
+	node .github/bluesky_post.js
+
 
