@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-08-29-.md",
+                "file": "support.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-08-29-"
+              "title": "support"
             }
           }
         ]
@@ -168,6 +168,18 @@
   },
   "active": "4a068b2a1609313d",
   "lastOpenFiles": [
+    "vendor/bundle/ruby/3.4.0/bundler.lock",
+    "support.md~",
+    "_site/assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",
+    "_site/assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
+    "assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",
+    "assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
+    "4913",
+    "_site/support.html",
+    "_posts/2025-08-29-.md",
+    "support.md",
+    "_site/yarn.lock",
+    "_includes/banner.html",
     "Untitled.base",
     "_posts/2025-01-11-godot-adventures.md",
     "politics.md",
@@ -181,10 +193,6 @@
     "previews/sera-que-é-só-burrice-mesmo.png",
     "previews/tetrahedron.png",
     "previews/acelera-celera-jesus.png",
-    "previews/godot-adventures.png",
-    "previews/cards-js.png",
-    "previews/hello-world.png",
-    "_posts/2025-08-29-.md",
     "assets/2025/08/29/imgs",
     "assets/2025/08/29",
     "_posts/2025-08-28-materialismo-estoico-deletério.md",
@@ -195,12 +203,6 @@
     "_posts/2024-11-15-tetrahedron.md",
     "_posts/2024-11-15-hello-world.md",
     "node_modules/dotenv/lib/main.js",
-    "node_modules/dotenv/lib/main.d.ts",
-    "node_modules/dotenv/lib/env-options.js",
-    "node_modules/dotenv/lib/cli-options.js",
-    "node_modules/dotenv/package.json",
-    "node_modules/dotenv/config.js",
-    "node_modules/dotenv/config.d.ts",
     "node_modules/dotenv/SECURITY.md",
     "node_modules/dotenv/README.md",
     "node_modules/dotenv/README-es.md",
@@ -210,8 +212,6 @@
     "node_modules/@atproto/api/OAUTH.md",
     "node_modules/@atproto/api/CHANGELOG.md",
     "node_modules/@atproto/xrpc/README.md",
-    "node_modules/@atproto/xrpc/CHANGELOG.md",
-    "node_modules/@atproto/syntax/README.md",
-    "_site/previews/materialismo-estoico-deletério.png"
+    "node_modules/@atproto/xrpc/CHANGELOG.md"
   ]
 }
