@@ -1,6 +1,6 @@
 ---
 layout: post
-category: politica
+category: politics
 lang: pt-br
 description: Como Olavo descobriu a fraqueza da esquerda que ajudou Hitler e elegeu Bolsonaro
 ---

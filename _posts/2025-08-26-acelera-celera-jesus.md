@@ -1,9 +1,10 @@
 ---
 layout: post
-category: politica
+category: politics 
 lang: pt-br
 description: Vamos entender a filosofia do fim do mundo e a leitura escatológica de Marx
 ---
+
 Se você está lendo isso, significa que sobreviveu a [mais um fim do mundo](https://pt.wikipedia.org/wiki/Lista_de_datas_previstas_para_eventos_apocal%C3%ADpticos). Parabéns!
 
 ![salvador][salvador] <small> De repente, _Jesus_ as encontrou e disse: “_Salve_!” - Mateus 28:9 NVI </small>

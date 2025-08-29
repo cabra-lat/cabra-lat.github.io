@@ -21,7 +21,15 @@ entries:
       show_more_text: see more...
       show_more_url: archive.html
 
-  - title: fortran posts
+  - title: politics
+    post_list:
+      category: politics 
+      limit: 1
+      show_more: true
+      show_more_text: See more...
+      show_more_url: politics.html
+
+  - title: fortran
     post_list:
       category: fortran
       limit: 1
@@ -29,7 +37,7 @@ entries:
       show_more_text: See more...
       show_more_url: fortran.html
   
-  - title: other coding stuff
+  - title: other coding 
     post_list:
       category: coding
       limit: 1

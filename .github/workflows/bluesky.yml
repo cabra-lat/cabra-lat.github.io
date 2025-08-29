@@ -1,0 +1,58 @@
+name: Post to Bluesky
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  post-to-bluesky:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Check if commit message indicates a new post
+        id: check_commit
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          if [[ "$COMMIT_MSG" == publish:* ]]; then
+            echo "is_new_post=true" >> $GITHUB_OUTPUT
+            # Extrair o título da postagem do commit message
+            POST_TITLE="${COMMIT_MSG#publish: }"
+            echo "post_title=$POST_TITLE" >> $GITHUB_OUTPUT
+          else
+            echo "is_new_post=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Get latest post URL
+        id: get_url
+        if: steps.check_commit.outputs.is_new_post == 'true'
+        run: |
+          # Encontra a última postagem baseado no nome do arquivo
+          LATEST_POST=$(find _posts -type f -name "*.md" | sort | tail -1)
+          
+          # Converte para URL (ajuste conforme sua estrutura de blog)
+          # Exemplo para Jekyll: _posts/2023-08-29-titulo.md -> /2023/08/29/titulo.html
+          POST_DATE=$(echo $LATEST_POST | cut -d'/' -f2 | cut -d'-' -f1-3)
+          POST_SLUG=$(echo $LATEST_POST | cut -d'/' -f2 | cut -d'-' -f4- | sed 's/\.md$//')
+          URL="https://blog.cabra.lat/$POST_DATE/$POST_SLUG.html"
+          
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "Encontrada URL: $URL"
+
+      - name: Set up Node.js
+        if: steps.check_commit.outputs.is_new_post == 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        if: steps.check_commit.outputs.is_new_post == 'true'
+        run: npm install @atproto/api
+
+      - name: Post to Bluesky
+        if: steps.check_commit.outputs.is_new_post == 'true'
+        env:
+          BLSKY_IDENTIFIER: ${{ secrets.BLSKY_IDENTIFIER }}
+          BLSKY_APP_PASSWORD: ${{ secrets.BLSKY_APP_PASSWORD }}
+        run: node .github/bluesky_post.js "${{ steps.get_url.outputs.url }}" "${{ steps.check_commit.outputs.post_title }}"
