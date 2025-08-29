@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: archive 
 title: Ajude o blog a se manter no ar
 ---
 
