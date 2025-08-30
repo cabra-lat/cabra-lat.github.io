@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-08-28-materialismo-estoico-deletério.md",
+                "file": "_posts/2025-08-29-falta-algo-na-matemática.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "2025-08-28-materialismo-estoico-deletério"
+              "title": "2025-08-29-falta-algo-na-matemática"
             }
           }
         ]
@@ -168,22 +168,31 @@
   },
   "active": "493806eeacc0dc74",
   "lastOpenFiles": [
+    "_site/assets/2025/08/29/imgs/airplanes.png",
+    "assets/2025/08/29/imgs/airplanes.png",
+    "_site/assets/2025/08/29/imgs/wtc.png",
+    "_site/assets/2025/08/29/imgs",
+    "_site/assets/2025/08/29",
+    "assets/2025/08/29/imgs/wtc.png",
+    "_site/previews/falta-algo-na-matemática.html",
+    "_site/previews/:slug.html.md",
+    "_site/falta-algo-na-matemática.html",
+    "_site/previews/a-matemática-não-é-consistente.png",
+    "previews/a-matemática-não-é-consistente.png",
+    "_site/previews/a-matemática-não-é-consistente.html",
+    "_site/a-matemática-não-é-consistente.html",
     "vendor/bundle/ruby/3.4.0/bundler.lock",
+    "{{.md",
+    "_posts/2025-08-29-falta-algo-na-matemática.md",
+    "_posts/2025-08-28-materialismo-estoico-deletério.md",
     "favicons/site.webmanifest~",
     "assets/2025/01/01/js/playing-cards.js~",
     "support.md",
     "support.md~",
-    "_layouts/support.html",
-    "_posts/2025-08-29-.md",
     "_site/assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",
     "_site/assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
     "assets/qr-bc1qklwq4pfcc6qhsd540zy35asdsvp5580f9h8a27.png",
     "assets/qr-0xf1d2907F79A9B189D38EC4E48b6A27cFfD22F657.png",
-    "4913",
-    "_site/support.html",
-    "_site/yarn.lock",
-    "_includes/banner.html",
-    "Untitled.base",
     "_posts/2025-01-11-godot-adventures.md",
     "politics.md",
     "README.md",
@@ -191,13 +200,6 @@
     "fortran.md",
     "coding.md",
     "previews/materialismo-estoico-dietético.png",
-    "previews/materialismo-estoico-deletério.png",
-    "previews/paranoia.png",
-    "previews/sera-que-é-só-burrice-mesmo.png",
-    "previews/tetrahedron.png",
-    "previews/acelera-celera-jesus.png",
-    "assets/2025/08/29/imgs",
-    "_posts/2025-08-28-materialismo-estoico-deletério.md",
     "_posts/2025-08-26-acelera-celera-jesus.md",
     "_posts/2025-08-24-sera-que-é-só-burrice-mesmo-?.md",
     "_posts/2025-01-01-cards.js.md",
@@ -211,8 +213,6 @@
     "node_modules/@atproto/api/docs/moderation.md",
     "node_modules/@atproto/api/README.md",
     "node_modules/@atproto/api/OAUTH.md",
-    "node_modules/@atproto/api/CHANGELOG.md",
-    "node_modules/@atproto/xrpc/README.md",
-    "node_modules/@atproto/xrpc/CHANGELOG.md"
+    "node_modules/@atproto/api/CHANGELOG.md"
   ]
 }
