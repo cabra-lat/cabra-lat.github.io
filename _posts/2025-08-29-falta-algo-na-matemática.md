@@ -7,9 +7,10 @@ description: (E tudo bem!) Aviões não vão despencar, prédios não serão der
 
 <!-- Tá bom, aqui está seu easter egg, hackerzinho! -->
 
-<!-- 
-![o-aviao-da-matematica]({{ page.assets }}/imgs/wtc.png) <small> A matemática é um avião com duas asas antagônicas, que sobrevoa uma cidade densamente povoada... indo em direçaõ ao WTC, enquanto é crivado de balas e se torna o próprio avião do viés do sobrevivente </small>
--->
+<div style="display: none;">
+<img src="{{ page.assets }}/imgs/wtc.png"/> <small> A matemática é um avião com duas asas antagônicas, que sobrevoa uma cidade densamente povoada... indo em direçaõ ao WTC, enquanto é crivado de balas e se torna o próprio avião do viés do sobrevivente </small>
+</div>
+
 ![o-aviao-da-matematica]({{ page.assets }}/imgs/airplanes.png) <small> A matemática é um avião com duas asas antagônicas, que sobrevoa uma cidade densamente povoada.</small>
 
 Axiomas são como as regras básicas de um jogo. Não provamos que são verdadeiras - simplesmente aceitamos para poder começar a jogar. Na matemática, essas regras fundamentais são os pontos de partida a partir dos quais construímos todo o resto.
@@ -28,7 +29,7 @@ Na teoria dos conjuntos, que é a base da matemática moderna, temos um problema
 
 O que torna esse axioma tão intrigante é que não podemos provar se ele é verdadeiro ou falso. Em 1938, `Gödel` mostrou que, se a teoria dos conjuntos sem o axioma da escolha é consistente, então também é consistente com ele. Depois, em 1963, `Cohen` provou que também é consistente sem ele. Ou seja, temos duas matemáticas possíveis: uma onde o axioma da escolha vale, e outra onde não vale. Ambas funcionam, mas cada uma permite demonstrar teoremas diferentes.
 
-Aqui está o cerne da questão: **não existem meios-termos**. Ou assumimos o Axioma da Escolha completo, ou não assumimos. Não há "formas mais fracas" que resolvam o problema fundamental - são apenas maneiras diferentes de escondermos a escolha debaixo do tapete. É uma decisão irredutível que precisamos fazer, não algo que possamos contornar com truques formais.
+Aqui está o cerne da questão: **não existem meios-termos**. Ou assumimos alguma forma do Axioma da Escolha, ou não assumimos. Não há "formas mais fracas" que resolvam o problema fundamental - são apenas maneiras diferentes de escondermos a escolha debaixo do tapete. É uma decisão irredutível que precisamos fazer, não algo que possamos contornar com truques formais.
 
 Na prática, a maioria dos matemáticos aceita o axioma da escolha porque ele simplifica muitas demonstrações. Com ele, podemos provar que todo espaço vetorial tem uma base, que todo anel com unidade tem um ideal maximal, e muitos outros resultados fundamentais.
 
