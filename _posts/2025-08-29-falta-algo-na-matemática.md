@@ -5,6 +5,11 @@ lang: pt-br
 description: (E tudo bem!) Aviões não vão despencar, prédios não serão derrubados.
 ---
 
+<!-- Tá bom, aqui está seu easter egg, hackerzinho! -->
+
+<!-- 
+![o-aviao-da-matematica]({{ page.assets }}/imgs/wtc.png) <small> A matemática é um avião com duas asas antagônicas, que sobrevoa uma cidade densamente povoada... indo em direçaõ ao WTC, enquanto é crivado de balas e se torna o próprio avião do viés do sobrevivente </small>
+-->
 ![o-aviao-da-matematica]({{ page.assets }}/imgs/airplanes.png) <small> A matemática é um avião com duas asas antagônicas, que sobrevoa uma cidade densamente povoada.</small>
 
 Axiomas são como as regras básicas de um jogo. Não provamos que são verdadeiras - simplesmente aceitamos para poder começar a jogar. Na matemática, essas regras fundamentais são os pontos de partida a partir dos quais construímos todo o resto.
