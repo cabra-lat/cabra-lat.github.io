@@ -55,7 +55,7 @@ Assim como a deusa hindu Maya teceria a ilusão que nos separa da verdade últim
 
 > Então, sim, falta algo na matemática.
 > 
-> Isso, porém, isso não importa! 
+> Isso, porém, não importa! 
 
 Os aviões não vão despencar dos céus, os prédios não desmoronarão amanhã, as bolsas de valores não quebrarão e muito menos os átomos explodirão em uma desestabilização cósmica.
 
