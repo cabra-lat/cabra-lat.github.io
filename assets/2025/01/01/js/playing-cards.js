@@ -5,32 +5,31 @@ let cards = new CardsJS({ cardsUrl: 'https://blog.cabra.su/cards.js/img/cards.pn
 let deck = cards.Deck();
 deck.addCards(cards.all);
 
+let gameOver = false;
+let pile;
+
 let yours = cards.Deck({
-  type: 'hand',                // Type: 'hand' indicates it will be rendered as a hand
-  label: 'Your Hand',          // Label for the hand
+  type: 'hand',
+  label: 'Your Hand',
   faceUp: true,
-  y: cards.playableArea.bottom // Position at the bottom of the playable area
+  y: cards.playableArea.bottom
 });
 
 let theirs = cards.Deck({
   type: 'hand',
   label: 'Other Hand',
-  y: cards.playableArea.top  // Position at the top of the playable area
+  y: cards.playableArea.top
 });
 
-yours.on('mouseenter',
-   card => yours.label.text = `This is ${card}`);
-theirs.on('mouseenter',
-   card => theirs.label.text = 'Other Hand');
-deck.on('mouseenter',
-   card => deck.label.text = 'Main Deck');
+yours.on('mouseenter', card => yours.label.text = `This is ${card}`);
+theirs.on('mouseenter', _ => theirs.label.text = 'Other Hand');
+deck.on('mouseenter', _ => {
+  if (!gameOver && pile) deck.label.text = `Main Deck`;
+});
 
-theirs.on('mouseleave',
-  card => theirs.label.text = '')
-deck.on('mouseleave',
-  card => deck.label.text = '')
-yours.on('mouseleave',
-  card => yours.label.text = '')
+theirs.on('mouseleave', _ => theirs.label.text = '')
+deck.on('mouseleave', _ => { if (!gameOver) deck.label.text = '' })
+yours.on('mouseleave', _ => yours.label.text = '')
 
 deck.label.sticky = 'bottom'
 
@@ -48,11 +47,14 @@ deck.render();
 
 deck.shuffle()
 
-let pile = cards.Deck({
+pile = cards.Deck({
   label: 'discard',
   sticky: 'top',
   faceUp: true
 });
+
+pile.on('mouseenter', _ => pile.label.text = `discard: ${pile.length}`)
+pile.on('mouseleave', _ => pile.label.text = `discard`)
 
 pile.x += 50;
 pile.addCard(deck.topCard());
@@ -60,17 +62,37 @@ pile.render();
 
 let canDiscard = card => canPlay(card, pile.topCard())
 
-// Handle mouse enter event to show playable cards
+// show playable card hint
 yours.on('mouseenter', card => {
   canDiscard(card)
     ? yours.label.text = `You can play ${card}`
     : yours.label.text = `This is ${card}`;
 });
 
-// Handle deck click to draw cards
-let gameOver = false;
-deck.click(card => {
-  if (gameOver) return;
+// restart function
+let restartGame = async () => {
+  await yours.deal(-1, [deck]);
+  await theirs.deal(-1, [deck]);
+  await pile.deal(-1, [deck]);
+
+  deck.shuffle();
+
+  await deck.deal(5, [yours, theirs]);
+
+  pile.addCard(deck.topCard());
+  pile.render();
+
+  gameOver = false;
+  deck.label.text = `Main Deck`;
+  theirs.faceUp = false;
+};
+
+// deck click
+deck.click(async (card) => {
+  if (gameOver) {
+    await restartGame();
+    return;
+  }
   const ableToPlay = yours.filter(canDiscard).pop();
   if (!ableToPlay && card === deck.topCard()) {
     deck.deal(1, [yours]);
@@ -84,25 +106,23 @@ yours.click((card) => {
   if (playable.includes(card)) {
     pile.addCard(card)
     yours.label.text = `Played ${card}.`
-    const gameWon = yours.length === 0
-    const gameLost = !playable && deck.length === 0
-    if (gameWon)  alert('You Won!')
-    if (gameLost) alert('You Lost!')
-    gameOver = gameWon || gameLost
-    return
+  } else {
+    yours.label.text = `Can't play ${card}!`
   }
-  yours.label.text = `Can't play ${card}!`
-})
+  const gameWon = yours.length === 0
+  const gameLost = playable.length === 0 && deck.length === 0
 
-pile.click( _ => {
-    if (!gameOver) return
-    yours
-    .deal(-1, [ deck ])
-    .then(_ => theirs.deal(-1, [ deck ]) )
-    .then(_ => pile.deal(-1, [ deck ]) )
-    .then(_ => deck.x += 50 )
+  if (gameWon) {
+    deck.label.text = `🏆 You Won!\nScore: ${pile.length} cards\nClick deck to restart.`
+  }
+  if (gameLost) {
+    deck.label.text = `💀 You Lost!\nScore: ${pile.length} cards\nClick deck to restart.`
+  }
+  gameOver = gameWon || gameLost
+  if (gameOver) theirs.faceUp = true
 })
 
 await deck.deal(5, [yours, theirs])
 
 window.status = 'say_cheese'
+
