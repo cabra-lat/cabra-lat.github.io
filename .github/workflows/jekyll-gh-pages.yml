@@ -41,7 +41,7 @@ jobs:
       - name: Convert Cooklang Recipes
         run: |
           mkdir -p _recipes
-          for recipe in _cooklang/*.cook; do
+          for recipe in assets/recipes/*.cook; do
             if [ -f "$recipe" ]; then
               basename=$(basename "$recipe" .cook)
               echo "Converting: $basename.cook -> _recipes/$basename.md"

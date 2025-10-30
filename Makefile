@@ -19,7 +19,7 @@ gen-recipes:
 		sudo mv cook /usr/local/bin/ && \
 		rm cook.tar.gz)
 	@mkdir -p _recipes
-	@for recipe in _cooklang/*.cook; do \
+	@for recipe in assets/recipes/*.cook; do \
 		if [ -f "$$recipe" ]; then \
 			basename=$$(basename "$$recipe" .cook); \
 			echo "🔨 Convertendo: $$basename.cook -> _recipes/$$basename.md"; \
