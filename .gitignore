@@ -31,3 +31,6 @@ vendor/bundle/
 # Environment files
 .env
 .e
+
+_recipes/
+previews/
