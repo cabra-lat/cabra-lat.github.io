@@ -16,7 +16,7 @@ permalink: /recipes/
 {% if recipe.cuisine %}🌎 {{ recipe.cuisine }}{% endif %}
 {% endif %}
 
-[Ver receita →]({{ recipe.url }}) • [📥 Baixar .cook](/assets/recipes/{{ recipe.name | replace: '.md', '.cook' }})
+[Ver receita →]({{ recipe.url }}) • [📥 Baixar .cook](/assets/recipes/{{ recipe.slug }}.cook)
 
 ---
 {% endfor %}
