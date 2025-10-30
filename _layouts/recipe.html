@@ -2,35 +2,23 @@
 layout: default
 ---
 
+{%-include back_link.html-%}
+
 <article class="recipe">
   <header class="recipe-header">
     <h1>{{ page.title }}</h1>
     
     <div class="recipe-metadata">
       {% if page.servings %}
-        <span class="metadata-item">🍽️ {{ page.servings }} porções</span>
+        <span class="metadata-item">🍽️ {{ page.servings }}</span>
       {% endif %}
-      
       {% if page.time %}
         <span class="metadata-item">⏱️ {{ page.time }}</span>
       {% endif %}
-      
       {% if page.cuisine %}
         <span class="metadata-item">🌎 {{ page.cuisine }}</span>
       {% endif %}
-      
-      {% if page.difficulty %}
-        <span class="metadata-item">📊 {{ page.difficulty }}</span>
-      {% endif %}
     </div>
-    
-    {% if page.tags %}
-      <div class="recipe-tags">
-        {% for tag in page.tags %}
-          <span class="tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-    {% endif %}
   </header>
 
   <div class="recipe-content">
@@ -38,23 +26,11 @@ layout: default
   </div>
 
   <footer class="recipe-footer">
-    <div class="cooklang-actions">
-      <a href="{{ page.cooklang_source }}" download class="button">
+    <p>
+      <a href="/assets/recipes/{{ page.slug }}.cook" download>
         📥 Baixar .cook
       </a>
-      <small>Compatível com apps Cooklang</small>
-    </div>
-    
-    {% if page.source %}
-      <div class="source">
-        <strong>Fonte:</strong> 
-        {% if page.source contains 'http' %}
-          <a href="{{ page.source }}">{{ page.source }}</a>
-        {% else %}
-          {{ page.source }}
-        {% endif %}
-      </div>
-    {% endif %}
+    </p>
   </footer>
 </article>
 
@@ -67,22 +43,17 @@ layout: default
 
 .recipe-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   border-bottom: 2px solid #d4a574;
-  padding-bottom: 2rem;
-}
-
-.recipe-header h1 {
-  color: #2c5530;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .recipe-metadata {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .metadata-item {
@@ -92,99 +63,15 @@ layout: default
   font-size: 0.9rem;
 }
 
-.recipe-tags {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: #d4a574;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-}
-
 .recipe-content {
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 2rem 0;
 }
 
-.recipe-content p {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: #fafafa;
-  border-radius: 8px;
-  border-left: 4px solid #2c5530;
-}
-
-.cooklang-ingredient {
-  background: #e8f5e8;
-  color: #2c5530;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  margin: 0 0.2rem;
-}
-
-.cooklang-cookware {
-  background: #e3f2fd;
-  color: #1565c0;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  margin: 0 0.2rem;
-}
-
-.cooklang-timer {
-  background: #fff3e0;
-  color: #e65100;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  margin: 0 0.2rem;
-}
-
-.cooklang-comment {
-  background: #fce4ec;
-  color: #880e4f;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-style: italic;
-  display: inline-block;
-  margin: 0.5rem 0;
-}
-
 .recipe-footer {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #eee;
   text-align: center;
-}
-
-.cooklang-actions {
-  margin-bottom: 1rem;
-}
-
-.button {
-  display: inline-block;
-  background: #2c5530;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background: #1e3a22;
-}
-
-.source {
-  font-size: 0.9rem;
-  color: #666;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 </style>

@@ -1,4 +1,4 @@
-name: Deploy Jekyll with Custom Plugins and Previews
+name: Deploy Jekyll
 
 on:
   push:
@@ -31,6 +31,24 @@ jobs:
         run: |
           bundle install
 
+      - name: Install CookCLI
+        run: |
+          curl -L https://github.com/cooklang/cookcli/releases/latest/download/cook-x86_64-unknown-linux-gnu.tar.gz -o cook.tar.gz
+          tar -xzf cook.tar.gz
+          sudo mv cook /usr/local/bin/
+          cook --version
+
+      - name: Convert Cooklang Recipes
+        run: |
+          mkdir -p _recipes
+          for recipe in _cooklang/*.cook; do
+            if [ -f "$recipe" ]; then
+              basename=$(basename "$recipe" .cook)
+              echo "Converting: $basename.cook -> _recipes/$basename.md"
+              cook recipe -f markdown "$recipe" > "_recipes/${basename}.md"
+            fi
+          done
+
       - name: Build Site with Jekyll
         run: |
           bundle exec jekyll build --destination ./_site
@@ -44,9 +62,10 @@ jobs:
         run: npm install puppeteer
 
       - name: Generate OG Image Screenshots
-        run: mkdir -p previews &&
-             node .github/workflows/generate_previews.js &&
-             rsync -a previews/* ./_site/previews || exit 1
+        run: |
+          mkdir -p previews
+          node .github/workflows/generate_previews.js
+          rsync -a previews/* ./_site/previews || exit 1
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
