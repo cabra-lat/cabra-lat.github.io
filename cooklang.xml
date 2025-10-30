@@ -4,14 +4,15 @@ layout: null
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"
       xmlns:cooklang="https://cooklang.org/feeds/1.0">
-  <title>{{ site.title }} - Receitas</title>
-  <subtitle>Receitas em Cooklang do {{ site.title }}</subtitle>
-  <link href="{{ site.url }}{{ page.url }}" rel="self"/>
+  <title>{{ site.title }} - Receitas Cooklang</title>
+  <subtitle>Receitas em formato Cooklang</subtitle>
+  <link href="{{ site.url }}/cooklang.xml" rel="self"/>
   <link href="{{ site.url }}"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/feed.xml</id>
+  <id>{{ site.url }}/cooklang.xml</id>
   <author>
     <name>{{ site.author.name }}</name>
+    <email>{{ site.email }}</email>
   </author>
 
   {% for recipe in site.recipes %}
@@ -26,20 +27,30 @@ layout: null
     <summary>{{ recipe.description | default: recipe.excerpt | strip_html | truncate: 200 }}</summary>
     
     <!-- Metadados Cooklang -->
-    <cooklang:servings>{{ recipe.servings | default: 1 }}</cooklang:servings>
-    <cooklang:time total="{{ recipe.time | default: '30 minutes' }}"/>
+    {% if recipe.servings %}
+    <cooklang:servings>{{ recipe.servings }}</cooklang:servings>
+    {% endif %}
+    
+    {% if recipe.time %}
+    <cooklang:time total="{{ recipe.time }}"/>
+    {% endif %}
+    
     {% if recipe.time.prep %}
     <cooklang:time prep="{{ recipe.time.prep }}"/>
     {% endif %}
+    
     {% if recipe.time.cook %}
     <cooklang:time cook="{{ recipe.time.cook }}"/>
     {% endif %}
+    
     {% if recipe.cuisine %}
     <cooklang:cuisine>{{ recipe.cuisine }}</cooklang:cuisine>
     {% endif %}
+    
     {% if recipe.difficulty %}
     <cooklang:difficulty>{{ recipe.difficulty }}</cooklang:difficulty>
     {% endif %}
+    
     {% if recipe.tags %}
     <cooklang:tags>{{ recipe.tags | join: ',' }}</cooklang:tags>
     {% endif %}

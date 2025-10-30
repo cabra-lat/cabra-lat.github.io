@@ -33,7 +33,6 @@ collections:
     output: true
     permalink: /recipes/:name/
 
-
 defaults:
   - scope:
       path: "_recipes"
@@ -42,14 +41,14 @@ defaults:
       layout: "recipe"
       show_in_feed: true
 
+# Feed principal (para posts)
 feed:
   path: /feed.xml
   include_images: true
   icon: /previews/:slug.png
   logo: /favicons/favicon-96x96.png
 
-
+# Configuração Cooklang
 cooklang:
   source_dir: "_cooklang"
   public_dir: "assets/recipes"
-  generate_feed: true
