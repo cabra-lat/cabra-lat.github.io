@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<article class="recipe-container">
+  <header class="recipe-header">
+    <h1>{{ page.title }}</h1>
+    
+    <div class="recipe-metadata">
+      {% if page.servings %}
+      <span class="metadata-item">
+        <span class="icon">🍽️</span>
+        <strong>Porções:</strong> {{ page.servings }}
+      </span>
+      {% endif %}
+      
+      {% if page.time %}
+      <span class="metadata-item">
+        <span class="icon">⏱️</span>
+        <strong>Tempo total:</strong> {{ page.time }}
+      </span>
+      {% endif %}
+      
+      {% if page.time.prep %}
+      <span class="metadata-item">
+        <span class="icon">👩‍🍳</span>
+        <strong>Preparo:</strong> {{ page.time.prep }}
+      </span>
+      {% endif %}
+      
+      {% if page.time.cook %}
+      <span class="metadata-item">
+        <span class="icon">🔥</span>
+        <strong>Cozimento:</strong> {{ page.time.cook }}
+      </span>
+      {% endif %}
+      
+      {% if page.cuisine %}
+      <span class="metadata-item">
+        <span class="icon">🌎</span>
+        <strong>Culinária:</strong> {{ page.cuisine }}
+      </span>
+      {% endif %}
+      
+      {% if page.difficulty %}
+      <span class="metadata-item">
+        <span class="icon">📊</span>
+        <strong>Dificuldade:</strong> {{ page.difficulty }}
+      </span>
+      {% endif %}
+    </div>
+    
+    {% if page.tags %}
+    <div class="recipe-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="recipe-content">
+    <div class="ingredients-section">
+      <h2>📋 Ingredientes</h2>
+      <div class="ingredients-list">
+        {{ content | extract_ingredients }}
+      </div>
+    </div>
+
+    <div class="steps-section">
+      <h2>👩‍🍳 Modo de Preparo</h2>
+      <div class="steps">
+        {{ content | markdownify }}
+      </div>
+    </div>
+  </div>
+
+  <footer class="recipe-footer">
+    <div class="cooklang-actions">
+      <a href="{{ page.cooklang_source }}" download class="btn btn-outline">
+        📥 Baixar arquivo .cook
+      </a>
+      <a href="cooklang://import?url={{ site.url }}{{ page.cooklang_source | uri_escape }}" class="btn btn-primary">
+        📱 Abrir no app Cooklang
+      </a>
+    </div>
+    
+    {% if page.source %}
+    <div class="recipe-source">
+      <strong>Fonte:</strong> 
+      {% if page.source contains 'http' %}
+        <a href="{{ page.source }}" target="_blank">{{ page.source }}</a>
+      {% else %}
+        {{ page.source }}
+      {% endif %}
+    </div>
+    {% endif %}
+  </footer>
+</article>
+
+<!-- Botão flutuante para federação -->
+<div class="floating-cooklang-actions">
+  <a href="{{ page.cooklang_source }}" download title="Baixar .cook">
+    📥
+  </a>
+</div>

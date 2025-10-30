@@ -29,9 +29,27 @@ collections:
   previews:
     output: true
     permalink: /previews/:slug.html
+  recipes:
+    output: true
+    permalink: /recipes/:name/
+
+
+defaults:
+  - scope:
+      path: "_recipes"
+      type: "recipes"
+    values:
+      layout: "recipe"
+      show_in_feed: true
 
 feed:
   path: /feed.xml
   include_images: true
   icon: /previews/:slug.png
   logo: /favicons/favicon-96x96.png
+
+
+cooklang:
+  source_dir: "_cooklang"
+  public_dir: "assets/recipes"
+  generate_feed: true
