@@ -1,11 +1,11 @@
 entries:
-  - title: About me 
+  - title: about
     entries:
       - title: Master’s degree in progress @ USP
       - title: Graduated in Computational Physics @ USP
       - title: I live in Brazil and program mostly in Modern Fortran
 
-  - title: Links
+  - title: links
     entries:
       - title: "bluesky"
         url: https://bsky.app/profile/did:plc:ogyu3soahewfinml6hkziara
@@ -27,7 +27,7 @@ entries:
       category: politics 
       limit: 1
       show_more: true
-      show_more_text: See more...
+      show_more_text: see more...
       show_more_url: politics.html
 
   - title: fortran
@@ -35,7 +35,7 @@ entries:
       category: fortran
       limit: 1
       show_more: true
-      show_more_text: See more...
+      show_more_text: see more...
       show_more_url: fortran.html
   
   - title: other coding 
@@ -46,5 +46,7 @@ entries:
       show_more_text: see more...
       show_more_url: coding.html
 
-  - title: Meu livreto de receitas
-    url: /recipes/
+  - title: recipes
+    entries:
+    - title: see more...
+      url: /recipes/
