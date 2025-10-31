@@ -8,6 +8,9 @@ permalink: /recipes/
 
 # 📚 Receitas
 
+Aqui estão algumas receitas que já testei e as imagens do resultado.
+Você pode baixá-las no formato [.cook](https://cooklang.org/)
+
 {% for recipe in site.recipes %}
 <div class="recipe-preview">
   <div class="recipe-thumbnail">
@@ -26,7 +29,7 @@ permalink: /recipes/
     {% endif %}
 
     <div class="recipe-links">
-      <a href="{{ recipe.url }}">Ver receita →</a> • <a href="/assets/recipes/{{ recipe.slug }}.cook" download>📥 Baixar .cook</a>
+      <a href="{{ recipe.url }}">Ver receita →</a> • <a href="/assets/recipes/{{ recipe.slug }}.cook" download>Baixar .cook</a>
     </div>
   </div>
 </div>

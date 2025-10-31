@@ -11,27 +11,27 @@ back_url: /recipes/
 
     <img src="/assets/recipes/{{ page.slug }}.png" alt="{{ recipe.title }}" onerror="this.style.display='none'" />
     <div class="recipe-metadata">
-    {% if page.servings %}
+      {% if page.servings %}
       <span class="metadata-item">
         {% include icons/servings.html %}
         {{ page.servings }}
       </span>
-    {% endif %}
-    
-    {% if page.time %}
+      {% endif %}
+
+      {% if page.time %}
       <span class="metadata-item">
         {% include icons/clock.html %}
         {{ page.time }}
       </span>
-    {% endif %}
-    
-    {% if page.cuisine %}
+      {% endif %}
+
+      {% if page.cuisine %}
       <span class="metadata-item">
         {% include icons/globe.html %}
         {{ page.cuisine }}
       </span>
-    {% endif %}
-  </div>
+      {% endif %}
+    </div>
   </header>
 
   <div class="recipe-content">
@@ -40,9 +40,15 @@ back_url: /recipes/
 
   <footer class="recipe-footer">
     <p>
-      <a href="/assets/recipes/{{ page.slug }}.cook" download>
-        📥 Baixar .cook
-      </a>
+    <a href="/assets/recipes/{{ page.slug }}.cook" download>
+      Baixar .cook
+    </a>
+    </p>
+
+    <p>
+    <a href="{{ page.source }}" target="_blank">
+      Fonte: {{ page.source }}
+    </a>
     </p>
   </footer>
 </article>
