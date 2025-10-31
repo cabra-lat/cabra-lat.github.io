@@ -4,6 +4,8 @@ title: Receitas
 permalink: /recipes/
 ---
 
+{%-include back_link.html-%}
+
 # 📚 Receitas
 
 {% for recipe in site.recipes %}
@@ -11,9 +13,9 @@ permalink: /recipes/
 
 {% if recipe.servings or recipe.time or recipe.cuisine %}
 **Metadados:** 
-{% if recipe.servings %}🍽️ {{ recipe.servings }} • {% endif %}
-{% if recipe.time %}⏱️ {{ recipe.time }} • {% endif %}
-{% if recipe.cuisine %}🌎 {{ recipe.cuisine }}{% endif %}
+{% if recipe.servings %} 🍽️ {{ recipe.servings }} • {% endif %}
+{% if recipe.time %} ⏱️ {{ recipe.time }} • {% endif %}
+{% if recipe.cuisine %} 🌎 {{ recipe.cuisine }}{% endif %}
 {% endif %}
 
 [Ver receita →]({{ recipe.url }}) • [📥 Baixar .cook](/assets/recipes/{{ recipe.slug }}.cook)
