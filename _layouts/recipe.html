@@ -10,18 +10,28 @@ back_url: /recipes/
     <h1>{{ page.title }}</h1>
 
     <img src="/assets/recipes/{{ page.slug }}.png" />
-    
     <div class="recipe-metadata">
-      {% if page.servings %}
-        <span class="metadata-item">🍽️ {{ page.servings }}</span>
-      {% endif %}
-      {% if page.time %}
-        <span class="metadata-item">⏱️ {{ page.time }}</span>
-      {% endif %}
-      {% if page.cuisine %}
-        <span class="metadata-item">🌎 {{ page.cuisine }}</span>
-      {% endif %}
-    </div>
+    {% if page.servings %}
+      <span class="metadata-item">
+        {% include icons/servings.html %}
+        {{ page.servings }}
+      </span>
+    {% endif %}
+    
+    {% if page.time %}
+      <span class="metadata-item">
+        {% include icons/clock.html %}
+        {{ page.time }}
+      </span>
+    {% endif %}
+    
+    {% if page.cuisine %}
+      <span class="metadata-item">
+        {% include icons/globe.html %}
+        {{ page.cuisine }}
+      </span>
+    {% endif %}
+  </div>
   </header>
 
   <div class="recipe-content">
