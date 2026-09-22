@@ -35,7 +35,7 @@ jobs:
           # Exemplo para Jekyll: _posts/2023-08-29-titulo.md -> /2023/08/29/titulo.html
           POST_DATE=$(echo $LATEST_POST | cut -d'/' -f2 | cut -d'-' -f1-3)
           POST_SLUG=$(echo $LATEST_POST | cut -d'/' -f2 | cut -d'-' -f4- | sed 's/\.md$//')
-          URL="https://blog.cabra.lat/$POST_DATE/$POST_SLUG.html"
+          URL="https://cabra.pw/$POST_SLUG.html"
           
           echo "url=$URL" >> $GITHUB_OUTPUT
           echo "Encontrada URL: $URL"
