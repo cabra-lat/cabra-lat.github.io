@@ -46,22 +46,13 @@
           echo "=== Cabra Lattice Blog Development Environment ==="
 
           # Create gem directory if it doesn't exist
-          mkdir -p "$HOME/.nix-gems"
+          mkdir -p "$HOME/.nix-gems/lib"
+          ln -sf ${pkgs.ruby_3_4}/lib/libruby-3.4.9.so.3.4.9 "$HOME/.nix-gems/lib/libruby.so.3.4" 2>/dev/null || true
 
-          # Show versions
-          echo "Ruby:    $(ruby --version 2>&1 || echo 'not available')"
-          echo "Node.js: $(node --version 2>&1 || echo 'not available')"
-          echo "Cook CLI: $(cook --version 2>&1 || echo 'not available')"
-
-          # Check for required gems
-          if ! command -v bundle &> /dev/null; then
-            echo "Installing bundler..."
-            gem install --user-install bundler
-          fi
-
-          # Set up gem path
+          # Set up gem path and library path
           export GEM_HOME="$HOME/.nix-gems"
           export PATH="$GEM_HOME/bin:$PATH"
+          export LD_LIBRARY_PATH="$HOME/.nix-gems/lib:$LD_LIBRARY_PATH"
 
           # Create directories for recipes if they don't exist
           mkdir -p _recipes
