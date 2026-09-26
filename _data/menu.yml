@@ -22,6 +22,14 @@ entries:
       show_more_text: see more...
       show_more_url: archive.html
 
+  - title: swarm
+    post_list:
+      category: swarm
+      limit: 1
+      show_more: true
+      show_more_text: see more...
+      show_more_url: swarm.html
+
   - title: politics
     post_list:
       category: politics 
