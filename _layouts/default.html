@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
   {%- include head.html -%}
+  {%- include i18n_styles.html -%}
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('blog_lang');
+        var lang = saved || ((navigator.language || '').toLowerCase().startsWith('pt') ? 'pt' : 'en');
+        document.documentElement.setAttribute('data-blog-lang', lang);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
   <link rel="shortcut icon" href="/favicons/favicon.ico" />
@@ -49,5 +59,29 @@
       <script type="module" src="{{ site.baseurl }}/{{ page.assets }}/js/{{ js_file }}.js"></script>
       {% endfor %}
     {% endif %}
+
+    <script>
+      window.setBlogLang = function(l) {
+        document.documentElement.setAttribute('data-blog-lang', l);
+        try { localStorage.setItem('blog_lang', l); } catch(e) {}
+        updateLangButtons(l);
+      };
+
+      function updateLangButtons(l) {
+        var btns = document.querySelectorAll('.lang-btn');
+        btns.forEach(function(b) {
+          if (b.getAttribute('data-lang') === l) {
+            b.classList.add('active');
+          } else {
+            b.classList.remove('active');
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var current = document.documentElement.getAttribute('data-blog-lang') || 'pt';
+        updateLangButtons(current);
+      });
+    </script>
   </body>
 </html>

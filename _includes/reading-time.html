@@ -1,9 +1,14 @@
 {% if page.content %}
   {% assign words = page.content | number_of_words %}
   {% assign read_time = words | divided_by: 250 %}
+  {% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
   
   <div class="reading-time-indicator">
     {%-include icons/clock.html-%}
-    Tempo de leitura: {{ read_time }} min
+    {% if page.lang == "pt-br" or page.lang == "pt" %}
+      Tempo de leitura: {{ read_time }} min
+    {% else %}
+      Reading time: {{ read_time }} min
+    {% endif %}
   </div>
 {% endif %}

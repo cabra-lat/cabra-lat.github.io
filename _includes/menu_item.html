@@ -1,0 +1,36 @@
+<ul>
+  {%-for item in include.collection-%}
+    <li>
+    {%- if item.url -%}
+      <a href="{{ item.url }}">
+        {%- if item.title.pt and item.title.en -%}
+          <span class="i18n-en">{{ item.title.en }}</span><span class="i18n-pt">{{ item.title.pt }}</span>
+        {%- else -%}
+          {{ item.title }}
+        {%- endif -%}
+      </a>
+    {%- else -%}
+      {%- if item.title.pt and item.title.en -%}
+        <span class="i18n-en">{{ item.title.en }}</span><span class="i18n-pt">{{ item.title.pt }}</span>
+      {%- else -%}
+        {{ item.title }}
+      {%- endif -%}
+    {%- endif -%}
+    </li>
+
+    {%-if item.post_list-%}
+      {%
+        include post_list.html
+          category=item.post_list.category
+          limit=item.post_list.limit
+          show_more=item.post_list.show_more
+          show_more_text=item.post_list.show_more_text
+          show_more_url=item.post_list.show_more_url
+     -%}
+    {%-endif-%}
+
+    {%-if item.entries-%}
+      {%-include menu_item.html collection=item.entries-%}
+    {%-endif-%}
+  {%-endfor-%}
+</ul>

@@ -1,0 +1,44 @@
+{%-if include.category-%}
+  {%-assign posts = site.categories[include.category]-%}  
+{%-else-%}
+  {%-assign posts = site.posts-%}
+{%-endif-%}
+
+{%-if include.limit and posts.size > include.limit-%}
+  {%-assign limit_exceeded = true-%}
+{%-else-%}
+  {%-assign limit_exceeded = false-%}
+{%-endif-%}
+
+{%- if posts.size > 0 -%}
+  <ul class="post-list">
+    {%- for post in posts limit: include.limit -%}
+        {%- assign post_lang = "en" -%}
+        {%- if post.lang == "pt-br" or post.lang == "pt" -%}
+          {%- assign post_lang = "pt" -%}
+        {%- endif -%}
+        <li data-lang="{{ post_lang }}" class="post-item">
+          <span>{{- post.date | date: site.theme_config.date_format -}}</span>
+          <span class="lang-tag">[{{ post_lang | upcase }}]</span>
+          {% if site.theme_config.lowercase_titles == true %}
+          <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
+          {% else %}
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% endif %}
+        </li>
+    {%- endfor -%}
+    {%- if include.show_more and limit_exceeded -%}
+      <li class="show-more-item">
+        <a href="{{ include.show_more_url }}">
+          {%- if include.show_more_text.en and include.show_more_text.pt -%}
+            <span class="i18n-en">{{ include.show_more_text.en }}</span>
+            <span class="i18n-pt">{{ include.show_more_text.pt }}</span>
+          {%- else -%}
+            <span class="i18n-en">{{ include.show_more_text | default: "see more..." }}</span>
+            <span class="i18n-pt">ver mais...</span>
+          {%- endif -%}
+        </a>
+      </li>
+    {%- endif -%}
+  </ul>
+{%- endif -%}

@@ -1,60 +1,97 @@
 entries:
-  - title: about
+  - title:
+      en: about
+      pt: sobre
     entries:
-      - title: Master’s degree in progress @ USP
-      - title: Graduated in Computational Physics @ USP
-      - title: I live in Brazil and program mostly in Modern Fortran
+      - title:
+          en: Master’s degree in progress @ USP
+          pt: Mestrado em andamento na USP
+      - title:
+          en: Graduated in Computational Physics @ USP
+          pt: Graduado em Física Computacional pela USP
+      - title:
+          en: I live in Brazil and program mostly in Modern Fortran
+          pt: Moro no Brasil e programo principalmente em Modern Fortran
+      - title: curl -fsSL cabra.pw/install.sh | sh
 
-  - title: links
+  - title:
+      en: links
+      pt: links
     entries:
       - title: "bluesky"
         url: https://bsky.app/profile/did:plc:ogyu3soahewfinml6hkziara
 
       - title: "github"
         url: https://github.com/cabra-lat
-      - title: "this blog's rss"
+      - title:
+          en: "this blog's rss"
+          pt: "rss deste blog"
         url: feed.xml
 
-  - title: posts
+  - title:
+      en: posts
+      pt: postagens
     post_list:
       limit: 10
       show_more: true
-      show_more_text: see more...
+      show_more_text:
+        en: see more...
+        pt: ver mais...
       show_more_url: archive.html
 
-  - title: swarm
+  - title:
+      en: swarm
+      pt: frota (swarm)
     post_list:
       category: swarm
       limit: 1
       show_more: true
-      show_more_text: see more...
+      show_more_text:
+        en: see more...
+        pt: ver mais...
       show_more_url: swarm.html
 
-  - title: politics
+  - title:
+      en: politics
+      pt: política
     post_list:
       category: politics 
       limit: 1
       show_more: true
-      show_more_text: see more...
+      show_more_text:
+        en: see more...
+        pt: ver mais...
       show_more_url: politics.html
 
-  - title: fortran
+  - title:
+      en: fortran
+      pt: fortran
     post_list:
       category: fortran
       limit: 1
       show_more: true
-      show_more_text: see more...
+      show_more_text:
+        en: see more...
+        pt: ver mais...
       show_more_url: fortran.html
   
-  - title: other coding 
+  - title:
+      en: other coding 
+      pt: programação
     post_list:
       category: coding
       limit: 1
       show_more: true
-      show_more_text: see more...
+      show_more_text:
+        en: see more...
+        pt: ver mais...
       show_more_url: coding.html
 
-  - title: recipes
+  - title:
+      en: recipes
+      pt: receitas
     entries:
-    - title: see more...
+    - title:
+        en: see more...
+        pt: ver mais...
       url: /recipes/

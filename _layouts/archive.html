@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{%-include back_link.html-%}
+
+<header>
+  <h1>{{ page.title }}</h1>
+  {%-include lang_switcher.html-%}
+</header>
+
+{%-include post_list.html category=page.which_category-%}

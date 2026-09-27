@@ -1,1 +1,11 @@
-<a href="{{ page.back_url | default: layout.back_url | default: '/' | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+{%- assign is_pt = false -%}
+{%- if page.lang == "pt-br" or page.lang == "pt" -%}
+  {%- assign is_pt = true -%}
+{%- endif -%}
+<a href="{{ page.back_url | default: layout.back_url | default: '/' | relative_url }}">
+  {%- if is_pt -%}
+    &lt; voltar
+  {%- else -%}
+    {{ site.theme_config.back_home_text | default: "< back" }}
+  {%- endif -%}
+</a>

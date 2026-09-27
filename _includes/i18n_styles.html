@@ -1,0 +1,70 @@
+<style>
+  /* Language switcher */
+  .lang-nav {
+    margin: 0.35em 0 1.1em 0;
+    font-size: 0.85em;
+    opacity: 0.85;
+  }
+  .lang-nav-label {
+    margin-right: 2px;
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0 3px;
+    text-decoration: underline;
+    opacity: 0.6;
+  }
+  .lang-btn:hover {
+    opacity: 1;
+  }
+  .lang-btn.active {
+    font-weight: bold;
+    opacity: 1;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+  }
+
+  /* Language tag: hidden when PT or EN is filtered, only visible when ALL is selected */
+  .lang-tag {
+    display: none;
+  }
+  html[data-blog-lang="all"] .lang-tag {
+    display: inline;
+  }
+
+  /* Post list filtering by data-blog-lang */
+  html[data-blog-lang="pt"] .post-item[data-lang="en"] {
+    display: none !important;
+  }
+  html[data-blog-lang="en"] .post-item[data-lang="pt"] {
+    display: none !important;
+  }
+
+  /* Text translation toggling */
+  html[data-blog-lang="pt"] .i18n-en {
+    display: none !important;
+  }
+  html[data-blog-lang="pt"] .i18n-pt {
+    display: inline !important;
+  }
+
+  html[data-blog-lang="en"] .i18n-pt {
+    display: none !important;
+  }
+  html[data-blog-lang="en"] .i18n-en {
+    display: inline !important;
+  }
+
+  /* When ALL is selected, default to EN text for general UI, but show all posts */
+  html[data-blog-lang="all"] .i18n-pt {
+    display: none !important;
+  }
+  html[data-blog-lang="all"] .i18n-en {
+    display: inline !important;
+  }
+</style>
