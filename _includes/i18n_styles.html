@@ -67,4 +67,14 @@
   html[data-blog-lang="all"] .i18n-en {
     display: inline !important;
   }
+
+  /* Re-invert video in dark mode to match theme img handling */
+  body[a="dark"] video {
+    filter: invert(1);
+  }
+  @media (prefers-color-scheme: dark) {
+    body[a="auto"] video {
+      filter: invert(1);
+    }
+  }
 </style>
